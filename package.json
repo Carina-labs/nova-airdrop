@@ -12,6 +12,8 @@
     "@cosmjs/encoding": "^0.29.1",
     "@headlessui/react": "^1.7.2",
     "@heroicons/react": "^1.0.6",
+    "@types/bech32": "^1.1.4",
+    "bech32": "^2.0.0",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"

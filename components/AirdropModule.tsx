@@ -1,5 +1,5 @@
 import React from "react";
-
+import { AddressForm } from "./AddressForm";
 export const AirdropModule = () => {
   return (
     <>
@@ -25,12 +25,7 @@ export const AirdropModule = () => {
           <div className="w-full lg:w-1/2 px-4">
             <div className="mx-auto bg-gradient-to-r from-yellow-500 via-yellow-500 to-purple-500 text-lg md:rounded-xl rounded-lg shadow-md max-w-xl md:p-1 p-0.5">
               <div className="md:py-4 py-3 w-full bg-white md:rounded-t-xl rounded-t-lg md:px-4 px-3 md:mb-1 mb-0.5">
-                <div className="px-4 md:py-3 py-2 bg-black md:rounded-xl rounded-lg border-2 border-blue-500 md:mb-3 mb-2">
-                  <input className="w-full bg-transparent text-center md:text-xl outline-none font-semibold placeholder-gray-700 text-white tracking-tight text-sm" type="" placeholder="Enter your COSMOS address" /></div>
-                <div className="hidden px-4 md:py-3 py-2 bg-black md:rounded-xl rounded-lg border-2 border-blue-500 md:mb-3 mb-2">
-                  <input className="w-full bg-transparent text-center md:text-xl outline-none font-semibold placeholder-white text-white tracking-tight text-sm" type="" placeholder="0xA90c95q9...1125456eb" /></div>
-                <a className="inline-block w-full hover:bg-opacity-80 md:py-3 py-2 px-4 text-center md:text-xl md:rounded-xl rounded-lg text-white bg-blue-500 font-semibold transform duration-200 shadow-sm text-lg md:mb-2 mb-1" href="#" >Check</a>
-
+                <AddressForm />
               </div>
               <div className="py-3 md:py-4 md:px-5 px-3 w-full bg-white md:rounded-b-xl rounded-b-lg ">
                 <div className="grid relative items-center space-y-1 grid-cols-3">
