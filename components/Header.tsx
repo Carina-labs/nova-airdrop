@@ -1,50 +1,50 @@
-import { Disclosure } from "@headlessui/react";
-import Link from "next/link";
-import { useState } from "react";
-import { LogoIcon } from "./LogoIcon";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Disclosure } from '@headlessui/react'
+import Link from 'next/link'
+import { useState } from 'react'
+import { LogoIcon } from './LogoIcon'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
 export const Header = () => {
-  const [hide, setHide] = useState(true);
+  const [hide, setHide] = useState(true)
   const navigation = [
-    { name: "Docs", href: "/whitepaper.pdf" },
+    { name: 'Docs', href: '/whitepaper.pdf' },
     {
-      name: "Twitter",
-      href: "https://twitter.com/Supernovazone",
+      name: 'Twitter',
+      href: 'https://twitter.com/Supernovazone',
     },
     {
-      name: "Discord",
-      href: "https://discord.gg/2gj8fScWqD",
+      name: 'Discord',
+      href: 'https://discord.gg/2gj8fScWqD',
     },
     {
-      name: "Medium",
-      href: "https://medium.com/supernovazone",
+      name: 'Medium',
+      href: 'https://medium.com/supernovazone',
     },
-  ];
+  ]
 
   return (
     <Disclosure as="nav" className="w-full relative z-20 bg-black">
       {({ open }) => (
         <>
-          <div className="max-w-[780px] lg:max-w-[1050px] mx-[1.3rem] md:mx-auto">
-            <div className="w-full relative flex items-center h-[50px] md:h-[4.7rem] justify-between">
+          <div className="lg:container lg:mx-auto mx-7 h-24 lg:py-0 py-4 lg:max-w-7xl flex">
+            <div className="flex w-full justify-between items-center">
               <div className=" md:mx-0 md:flex items-center">
                 <LogoIcon />
               </div>
-              <div className="hidden md:flex">
+              <div className="hidden md:flex items-center">
                 <Link href="/whitepaper.pdf">
                   <a
                     target="_blank"
-                    className=" md:mb-[0.5rem] mr-2 md:mr-[1.7rem]"
+                    className="ml-2 md:ml-7"
                   >
-                    <p className="mt-[0.2rem] md:mt-1 text-white hover:text-yellow-500 text-13 md:text-22">
+                    <p className="text-white hover:text-yellow-500 text-xs md:text-2xl">
                       Docs
                     </p>
                   </a>
                 </Link>
                 <Link href="https://twitter.com/Supernovazone">
                   <a target="_blank">
-                    <div className="mt-[0.35rem] md:mt-2 mr-2 md:mr-[1.7rem]">
+                    <div className="ml-2 md:ml-7">
                       <svg
                         className="w-4 h-4 md:w-6 md:h-6 fill-white hover:fill-yellow-500"
                         viewBox="0 0 25 20"
@@ -57,7 +57,7 @@ export const Header = () => {
                 </Link>
                 <Link href="https://discord.gg/2gj8fScWqD">
                   <a target="_blank">
-                    <div className="mt-[0.35rem] md:mt-2 mr-2 md:mr-[1.7rem]">
+                    <div className="ml-2 md:ml-7">
                       <svg
                         className="w-4 h-4 md:w-6 md:h-6 fill-white hover:fill-yellow-500"
                         viewBox="0 0 28 20"
@@ -70,9 +70,9 @@ export const Header = () => {
                 </Link>
                 <Link href="https://medium.com/supernovazone">
                   <a target="_blank">
-                    <div className="mt-[0.35rem] md:mt-2 md:mr-[1.7rem]">
+                    <div className="ml-2 md:ml-7">
                       <svg
-                        className="w-4 h-4 md:w-6 md:h-6 fill-white hover:fill-yellow-500"
+                        className="w-4 h-4 md:w-6 md:h-6 fill-white hover:fill-yellow-default"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 640 512"
                       >
@@ -102,7 +102,7 @@ export const Header = () => {
             {hide ? null : (
               <div className="absolute top-12 bottom-0 right-[0] items-center justify-center md:hidden">
                 {navigation.map((item) => (
-                  <div className="flex-col bg-tw-black px-3 py-2 text-sm font-medium">
+                  <div className="flex-col bg-black px-3 py-2 text-sm font-medium">
                     <Link href={item.href}>
                       <a
                         target="_blank"
@@ -120,5 +120,5 @@ export const Header = () => {
         </>
       )}
     </Disclosure>
-  );
-};
+  )
+}
