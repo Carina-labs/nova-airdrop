@@ -72,7 +72,7 @@ export const Header = () => {
                   <a target="_blank">
                     <div className="ml-2 md:ml-7">
                       <svg
-                        className="w-4 h-4 md:w-6 md:h-6 fill-white hover:fill-yellow-default"
+                        className="w-4 h-4 md:w-6 md:h-6 fill-white hover:fill-yellow-500"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 640 512"
                       >
