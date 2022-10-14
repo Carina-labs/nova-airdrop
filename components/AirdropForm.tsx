@@ -69,7 +69,7 @@ export const AirdropForm = () => {
                         <p className=" text-black text-right font-semibold md:text-3xl col-span-2 text-xl" >1234.5678 ATOM</p>
                         <p className="hidden text-black text-right font-semibold md:text-3xl col-span-2 text-xl" >0 ATOM</p>
                     </div>
-                    <a className="inline-block w-full hover:bg-opacity-80 md:py-3 py-2 px-4 md:mt-4 mt-2 text-center md:text-xl md:rounded-xl rounded-lg text-yellow-500 bg-black font-semibold transform duration-200 shadow-sm text-lg md:mb-2 mb-1" href="#">Claim</a>
+                    <button className="inline-block w-full hover:bg-opacity-80 md:py-3 py-2 px-4 md:mt-4 mt-2 text-center md:text-xl md:rounded-xl rounded-lg text-yellow-500 bg-black font-semibold transform duration-200 shadow-sm text-lg md:mb-2 mb-1">Claim</button>
                     <a className="hidden w-full md:py-3 py-2 px-4 md:mt-4 mt-2 text-center md:text-xl md:rounded-xl rounded-lg text-gray-700 bg-gray-400 font-semibold transform duration-200 text-lg md:mb-2 mb-1" href="#" >Not Eligible</a>
                 </div>
             </div>
