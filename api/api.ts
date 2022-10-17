@@ -1,16 +1,13 @@
+import { fromBech32, toBech32 } from "@cosmjs/encoding";
 import axios from "axios";
-const novaRestUrl = "https://nova-rest.dev-supernova.xyz";
+import { CLAIMABLE_QUERY_PATH, NOVA_REST_URL } from "../config";
 const api = axios.create({
-  baseURL: novaRestUrl,
+  baseURL: NOVA_REST_URL,
   headers: {
     "Content-type": "application/json; charset=UTF-8",
     accept: "application/json,",
   },
 });
-
-export type ClaimableResponse = {
-  data: ClaimableAssets;
-};
 
 export type ClaimableAssets = {
   total_assets: {
@@ -19,11 +16,9 @@ export type ClaimableAssets = {
   };
 };
 export const getClaimable = async (address: string) => {
-  const response = await api.get<ClaimableAssets>(
-    "/nova/airdrop/v1/total_asset_for_airdrop",
-    {
-      params: { address: address },
-    }
-  );
+  const novaAddress = toBech32("nova", fromBech32(address).data);
+  const response = await api.get<ClaimableAssets>(CLAIMABLE_QUERY_PATH, {
+    params: { address: novaAddress },
+  });
   return response.data;
 };

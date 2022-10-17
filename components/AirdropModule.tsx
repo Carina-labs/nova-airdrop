@@ -1,4 +1,5 @@
 import React from "react";
+import { SNAPSHOT_BLOCK_HEIGHT, SNAPSHOT_TIMESTAMP } from "../config";
 import { AirdropForm } from "./AirdropForm";
 export const AirdropModule = () => {
   return (
@@ -13,8 +14,8 @@ export const AirdropModule = () => {
             </div>
             <div className="grid md:grid-cols-3 grid-cols-1 place-items-center md:h-16 -mx-4 md:space-y-0 space-y-2 md:py-0 py-2">
               <span className="text-white font-medium w-full text-center text-sm">Cosmos hub snapshot</span>
-              <span className="text-white font-medium text-sm w-full text-center">2022-01-01 00:00 UTC</span>
-              <span className="text-white font-medium text-sm w-full text-center lg:-ml-7">Block #12345678</span>
+              <span className="text-white font-medium text-sm w-full text-center">{SNAPSHOT_TIMESTAMP}</span>
+              <span className="text-white font-medium text-sm w-full text-center lg:-ml-7">Block #{SNAPSHOT_BLOCK_HEIGHT}</span>
             </div>
             <div className="relative w-full lg:ml-4 ml-14 md:ml-8">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 absolute text-yellow-500 md:w-6 md:h-6 md:-bottom-3 -bottom-2 md:-right-4 right-24 md:mr-0 mr-1.5" viewBox="0 0 21 21" fill="currentColor">
