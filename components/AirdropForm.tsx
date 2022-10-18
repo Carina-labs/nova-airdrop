@@ -75,7 +75,7 @@ export const AirdropForm = () => {
                             <p className="text-gray-700 text-right md:text-sm text-xs font-semibold md:col-span-2 col-span-1" >-</p>
                         }
                         <div className="relative flex items-center group col-span-1">
-                            <p className="text-gray-700 text-left md:text-sm text-xs md:mr-3 mr-2" >Airdrop Amount</p>
+                            <p className="text-gray-700 text-left md:text-sm text-xs md:mr-3 mr-2" >Airdrop amount</p>
                             <svg xmlns="http://www.w3.org/2000/svg" className="md:h-4 md:w-4 h-3 w-3 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><div className="absolute top-0 left-5 opacity-0 transition z-10 ease-in-out delay-200 group-hover:opacity-100 w-72 rounded-md block bg-gray-200 shadow-sm border border-gray-400 p-3">
                                 <p className="text-gray-600 font-medium w-full tracking-tight md:text-sm text-xs" >ATOM/snATOM exchange rate is determined by a formula: Supernova’s ATOM staked / current snATOM supply. Because staked ATOM is earning yield, it grow in size vs. snATOM over time. When you swap snATOM to ATOM, you receive more ATOM than you staked/swapped before.</p>
                             </div>
