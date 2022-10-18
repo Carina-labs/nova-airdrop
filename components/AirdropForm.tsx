@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useGetClaimable } from "../ hooks/useGetClaimable";
 import { Big } from "big.js";
 import { COSMOS_DECIMAL, NOVA_DECIMAL } from "../config";
+import clsx from "clsx";
 export const AirdropForm = () => {
     const fake_staked_amount = "123"; //for test
     const [address, setAddress] = useState('');
@@ -38,8 +39,8 @@ export const AirdropForm = () => {
     return (
         <div className="w-full lg:w-1/2 px-4">
             <div className="mx-auto bg-gradient-to-r from-yellow-500 via-yellow-500 to-purple-500 text-lg md:rounded-xl rounded-lg shadow-md max-w-xl md:p-1 p-0.5">
-                <div className="md:py-4 py-3 w-full bg-white md:rounded-t-xl rounded-t-lg md:px-4 px-3 md:mb-1 mb-0.5">
-                    <div className="px-4 md:py-3 py-2 bg-black md:rounded-xl rounded-lg border-2 border-blue-500 md:mb-3 mb-2">
+                <div className="w-full bg-white md:rounded-t-xl rounded-t-lg md:px-4 px-3 md:mb-1 mb-0.5 py-4 md:py-5">
+                    <div className={clsx("relative px-4 md:py-3 py-2 bg-black md:rounded-xl rounded-lg border-2 border-blue-500 md:mb-5 mb-4", { "ring-2 ring-red-500": !isValid })}>
                         <input className="w-full bg-transparent text-center md:text-xl outline-none font-semibold placeholder-gray-700 text-white tracking-tight text-sm"
                             type="string"
                             placeholder="Enter your COSMOS address"
@@ -47,12 +48,12 @@ export const AirdropForm = () => {
                             onChange={onInputChanged}
                             spellCheck={false}
                         />
+                        {!isValid &&
+                            <div className="right-0 flex items-center bg-transparent px-4 text-red-500 absolute w-full justify-center md:-bottom-5 -bottom-4">
+                                <span className="text-center text-xs font-medium md:leading-normal leading-tight">Invalid address</span>
+                            </div>
+                        }
                     </div>
-                    {!isValid && <div className="flex items-center justify-center bg-transparent w-full px-4 text-red-500 mb-1 md:mb-1.5">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd"></path></svg>
-                        <span className="text-center text-sm font-semibold">Invalid address</span>
-                    </div>}
                     <button
                         onClick={onCheckButtonClicked}
                         className="inline-block w-full hover:bg-opacity-80 md:py-3 py-2 px-4 text-center md:text-xl md:rounded-xl rounded-lg text-white bg-blue-500 font-semibold transform duration-200 shadow-sm text-lg md:mb-2 mb-1" >Check</button>
